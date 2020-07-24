@@ -1,0 +1,96 @@
+<!-- 商家详情 -->
+<div class="modal-header" xmlns:javaSrcipt="http://www.w3.org/1999/xhtml">
+    <button type="button" class="close" ng-click="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">广告详情</h4>
+</div>
+<div class="modal-body">
+
+            <ul class="nav nav-tabs">
+                    <li class="active"><a href="javascript:void(0)" ng-click="develope=1" data-toggle="tab">基本信息</a></li>
+                    <li ><a href="javascript:void(0)"  ng-click="develope=2" data-toggle="tab">详细信息</a></li>
+                    <li><a href="javascript:void(0)"  ng-click="develope=3" data-toggle="tab">广告时间</a></li>
+                    <li><a href="javascript:void(0)"  ng-click="develope=4" data-toggle="tab">广告图片</a></li>
+                </ul>
+
+                <!-- 选项卡开始 -->
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="home">
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope!=2&&develope!=3&&develope!=4" width="800px">
+                            <tr>
+                                <td>广告编号</td>
+                                <td ng-bind="advert.id"></td>
+                            </tr>
+                            <tr>
+                                <td>广告名称</td>
+                                <td ng-bind="advert.name"></td>
+                            </tr>
+                            <tr>
+                                <td>广告价格</td>
+                                <td ng-bind="advert.price"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane active in" id="linkman">
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==2">
+                            <tr>
+                                <td>广告类型</td>
+                                <td ng-bind="advert.type"></td>
+                            </tr>
+                            <tr>
+                                <td>广告开发商</td>
+                                <td ng-bind=" advert.gameDeveloper"></td>
+                            </tr>
+                            <tr>
+                                <td>广告标题</td>
+                                <td ng-bind="advert.title"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane active in" id="certificate">
+                        <div >
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==3">
+                            <tr>
+                                <td>审核时间</td>
+                                <td ng-bind="advert.auditTime"></td>
+                            </tr>
+                            <tr>
+                                <td>上架时间</td>
+                                <td ng-bind="advert.shelfTime"></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane active in" id="ceo">
+<!--                                                <div style="margin-top: -80px">-->
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==4" >
+                            <tr>
+                                <td>广告图片</td>
+                                <td>
+                                    <img src="http://localhost:8080/admin/downloadImage?imageName={{advert.pic}}" width="200" height="100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>广告url</td>
+                                <td ng-bind="advert.url"></td>
+                            </tr>
+                        </table>
+                                                </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- 选项卡结束 -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default"  ng-click="close()">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

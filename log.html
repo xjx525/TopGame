@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css"/>
+<link href="assets/css/codemirror.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/ace.min.css" />
+<link rel="stylesheet" href="font/css/font-awesome.min.css" />
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+<![endif]-->
+    <script src="js/angular.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src=" js/ui-bootstrap-tpls.js"></script>
+    <script src="assets/js/typeahead-bs2.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="assets/layer/layer.js" type="text/javascript" ></script>
+    <script src="assets/layer/ng-layer.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="angular/plugins/angular/pagination.js"></script>
+    <script src="assets/laydate/laydate.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="angular/plugins/angular/pagination.css">
+    <!-- 分页组件结束 -->
+    <script type="text/javascript" src="js/controller/log.js"></script>
+
+
+<title>个人信息管理</title>
+</head>
+<body ng-app="logApp" ng-controller="logCtrl">
+    <div id="Member_Ratings">
+        <div class="d_Confirm_Order_style">
+            <div class="search_style">
+                <div class="title_names">搜索查询</div>
+                <ul class="search_content clearfix">
+                    <li><label class="l_f">方法名</label><input name="" type="text"  class="text_add"  ng-model="con.name" placeholder="输入方法名"  style=" width:400px"/></li>
+                    <li style="width:90px;"><button type="button" class="btn_search" ng-click="search()"><i class="icon-search"></i>查询</button></li>
+                </ul>
+            </div>
+            <div class="border clearfix">
+       <span class="l_f">
+<!--        <a href="javascript:void(0)" class="btn btn-danger" ng-click="deleteAll()"><i class="icon-trash"></i>批量删除</a>-->
+       </span>
+            </div>
+            <div class="table_menu_list">
+                <table class="table table-border table-bordered table-bg table-hover table-sort" id="sample-table">
+                    <thead>
+                    <tr class="text-c">
+                        <th width="25px">
+                            <input id="selall" type="checkbox" class="icheckbox_square-blue" ng-model="selectedAll" ng-change="chooseAll()">
+                        </th>
+                        <th width="80">日志编号</th>
+                        <th width="100">方法描述</th>
+                        <th style="width: 250px">方法名</th>
+                        <th width="10%">用户名</th>
+                        <th width="17%">请求ip</th>
+                        <th width="10%" style="width: 125px">请求时间</th>
+                        <th width="150" style="width: 152px">操作</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="logInfo in logInfos">
+                        <td ><input type="checkbox" ng-model="logInfo.selected" ng-change="choose(logInfo)"></td>
+                        <td  ng-bind="logInfo.id"></td>
+                        <td ng-bind="logInfo.description"></td>
+                        <td  ng-bind="logInfo.method"></td>
+                        <td  ng-bind="logInfo.createBy"></td>
+                        <td ng-bind="logInfo.requestIp"></td>
+                        <td  ng-bind="logInfo.createDate"></td>
+                        <td class="text-center">
+                            <a title="编辑" onclick="member_edit('510')" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
+                            <a title="删除" href="javascript:;"  ng-click="delete(logInfo)" class="btn btn-xs btn-warning" ><i class="icon-trash  bigger-120"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <tm-pagination conf="pageInfo" style="float:right"></tm-pagination>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+ //按钮点击事件
+function modify(){
+	 $('.text_info').attr("disabled", false);
+	 $('.text_info').addClass("add");
+	  $('#Personal').find('.xinxi').addClass("hover");
+	  $('#Personal').find('.btn-success').css({'display':'block'});
+	};
+function save_info(){
+	    var num=0;
+		 var str="";
+     $(".xinxi input[type$='text']").each(function(n){
+          if($(this).val()=="")
+          {
+               
+			   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+                title: '提示框',				
+				icon:0,								
+          }); 
+		    num++;
+            return false;            
+          } 
+		 });
+		  if(num>0){  return false;}	 	
+          else{
+			  
+			   layer.alert('修改成功！',{
+               title: '提示框',				
+			   icon:1,			   		
+			  });
+			  $('#Personal').find('.xinxi').removeClass("hover");
+			  $('#Personal').find('.text_info').removeClass("add").attr("disabled", true);
+			  $('#Personal').find('.btn-success').css({'display':'none'});
+			   layer.close(index);
+			
+		  }		  		
+	};	
+ //初始化宽度、高度    
+    $(".admin_modify_style").height($(window).height()); 
+	$(".recording_style").width($(window).width()-400); 
+    //当文档窗口发生改变时 触发  
+    $(window).resize(function(){
+	$(".admin_modify_style").height($(window).height()); 
+	$(".recording_style").width($(window).width()-400); 
+  });
+</script>

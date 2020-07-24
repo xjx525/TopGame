@@ -1,0 +1,73 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">修改广告信息</h4>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped"  width="800px">
+        <tr>
+            <td>广告编号</td>
+            <td ng-bind="advertManage.id"></td>
+        </tr>
+
+        <tr>
+            <td>广告名称</td>
+            <td><input  class="form-control" placeholder="广告名称" ng-model="advertManage.name" disabled></td>
+        </tr>
+        <tr>
+            <td>广告类型</td>
+            <td>
+                <select ng-model="advertManage.typeId" ng-options="a.name for a in advertTypes" class="form-control"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>广告价格</td>
+            <td><input  class="form-control" placeholder="广告价格" ng-model="advertManage.price"></td>
+        </tr>
+        <tr>
+            <td>广告时长</td>
+            <td><input  class="form-control" placeholder="广告时长" ng-model="advertManage.time"></td>
+        </tr>
+
+        <tr>
+            <td>广告标题</td>
+            <td><input  class="form-control" placeholder="广告标题" ng-model="advertManage.title"></td>
+        </tr>
+<tr>
+        <td>广告图片</td>
+        <td>
+            <input type="file" id="file"/>
+            <input type="button" value="重新上传" ng-click="uploadImg()"/>
+            <img src="http://localhost:8080/admin/downloadImage?imageName={{advertManage.pic}}" width="200" height="100">
+        </td>
+</tr>
+
+<!--        <tr>-->
+<!--            <td>广告图片</td>-->
+<!--            <td>-->
+<!--                <div ><img id="face" style="width: 150px;height: 150px"></div>-->
+<!--                <input type="file" id="one-input" accept="image/*" file-model="images" onchange="angular.element(this).scope().img_upload(this.files)"/>-->
+<!--            </td>-->
+<!--        </tr>  -->
+
+        <tr>
+            <td>广告链接</td>
+            <td><input  class="form-control" placeholder="广告链接" ng-model="advertManage.url"></td>
+        </tr>
+        <tr>
+            <td>广告上架时间</td>
+            <td><input  class="form-control" placeholder="广告链接" ng-model="advertManage.shelfTime"></td>
+        </tr>
+        <tr>
+            <td>广告审核时间</td>
+            <td><input  class="form-control" placeholder="广告审核时间" ng-model="advertManage.auditTime" disabled></td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+    <button type="button" class="btn btn-success" ng-click="save(advertManage)">保存</button>
+</div>

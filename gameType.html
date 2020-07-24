@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="assets/css/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="font/css/font-awesome.min.css" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <script src="js/angular.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src=" js/ui-bootstrap-tpls.js"></script>
+    <script src="assets/js/typeahead-bs2.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="assets/layer/layer.js" type="text/javascript" ></script>
+    <script src="assets/layer/ng-layer.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="angular/plugins/angular/pagination.js"></script>
+    <script src="assets/laydate/laydate.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="angular/plugins/angular/pagination.css">
+    <!-- 分页组件结束 -->
+    <script type="text/javascript" src="js/controller/gameType111.js"></script>
+<title>游戏类型</title>
+</head>
+
+<body ng-app="gameTypeApp" ng-controller="gameTypeCtrl">
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">游戏类型</h3>
+    </div>
+    <div class="box-body">
+        <ol class="breadcrumb">
+            <li>
+                <a href="javascript:void(0)" ng-click="grand=1;findByParentId(eneity_1.id);eneity_2=null;eneity_3=null" >{{eneity_1.name}}</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="grand=2;findByParentId(eneity_2.id);eneity_3=null">{{eneity_2.name}}</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="grand=3;findByParentId(eneity_3.id)">{{eneity_3.name}}</a>
+            </li>
+        </ol>
+        <div class="table-box">
+            <button type="button" class="btn btn-default" ng-click="add()">
+                <i class="fa fa-file-o"></i> 新建
+            </button>
+            <button type="button" class="btn btn-default" ng-click="deleteGameType()">
+                <i class="fa fa-trash-o"></i> 删除
+            </button>
+            <button type="button" class="btn btn-default" ng-click="queryGoodsCategories()">
+                <i class="fa fa-refresh"></i> 刷新</button>
+            <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+                <thead>
+                <tr>
+                    <th style="padding-right:0px">
+                        <input id="selall" type="checkbox" class="icheckbox_square-blue" ng-model="selectedAll" ng-change="chooseAll()">
+                    </th>
+                    <th class="sorting_asc">分类id</th>
+                    <th class="sorting">分类名称</th>
+                    <th class="sorting">类型模板id</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="gameType in gameTypes">
+                    <td><input type="checkbox" ng-model="gameType.selected" ng-change="choose(gameType)"></td>
+                    <td ng-bind="gameType.id"></td>
+                    <td ng-bind="gameType.name"></td>
+                    <td ng-bind="gameType.typeId"></td>
+                    <td class="text-center">
+                        <button type="button" ng-if="grand<3" ng-click="findByParentId(gameType.id);loadChild(gameType)"  class="btn bg-olive btn-xs" data-toggle="modal" data-target="#sellerModal">查询下级</button>
+                        <button  type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#sellerModal">修改</button>
+
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <tm-pagination conf="pageInfo" style="float:right"></tm-pagination>
+        </div>
+    </div>
+</div>
+</body>
+</html>

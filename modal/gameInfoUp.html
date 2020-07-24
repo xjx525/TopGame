@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title" >修改游戏信息</h4>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped"  width="800px">
+        <tr>
+            <td>游戏编号</td>
+            <td><input  class="form-control" placeholder="游戏编号" ng-model="good.id" disabled></td>
+        </tr>
+        <tr>
+            <td>游戏名</td>
+            <td><input  class="form-control" placeholder="游戏名" ng-model="good.name"></td>
+        </tr>
+        <tr>
+            <td>游戏价格</td>
+            <td><input  class="form-control" placeholder="游戏价格" ng-model="good.price"></td>
+        </tr>
+        <tr>
+            <td>游戏上架时间</td>
+            <td><input  class="form-control" placeholder="游戏上架时间" ng-model="good.shelfTime"></td>
+        </tr>
+
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="close()">取消</button>
+    <button type="button" class="btn btn-success" ng-click="save(good)">保存</button>
+</div>

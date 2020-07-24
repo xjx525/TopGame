@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">×</button>
+    <h3 id="myModalLabel">规格编辑</h3>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped" width="800px">
+        <tr>
+            <td>规格名称</td>
+            <td><input class="form-control" placeholder="规格名称" ng-model="currentSpec.name"></td>
+        </tr>
+    </table>
+    <!-- 规格选项 -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-default" ng-click="addSpecOption()">
+            <i class="fa fa-file-o"></i> 新增规格选项
+        </button>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover dataTable">
+        <thead>
+        <tr>
+            <th class="sorting">规格选项</th>
+            <th class="sorting">排序</th>
+            <th class="sorting">操作</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="option in currentSpec.specOptions">
+            <td>
+                <input class="form-control" placeholder="规格选项" ng-model="option.name" ng-disabled="option.id != null">
+            </td>
+            <td>
+                <input class="form-control" placeholder="排序" ng-model="option.orders"  ng-disabled="option.id != null">
+            </td>
+            <td>
+                <button type="button" class="btn btn-default" ng-click="deleteSpecOption(option)">
+                    <i class="fa fa-trash-o"></i> 删除
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="save()">保存</button>
+    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" ng-click="close()">关闭</button>
+</div>

@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">添加广告信息</h4>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped"  width="800px">
+        <tr>
+            <td>广告名称</td>
+            <td><input  class="form-control" placeholder="广告名称" ng-model="advertManage.name" ></td>
+        </tr>
+        <tr>
+            <td>广告类型编号</td>
+            <td><input  class="form-control" placeholder="广告类型编号" ng-model="advertManage.typeId" ></td>
+        </tr>
+        <tr>
+            <td>广告投资商</td>
+            <td><input  class="form-control" placeholder="广告投资商" ng-model="advertManage.gameDeveloper" ></td>
+        </tr>
+        <tr>
+            <td>广告价格</td>
+            <td><input  class="form-control" placeholder="广告价格" ng-model="advertManage.price"></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <label><input name="form-field-radio" type="radio" checked="checked" class="ace"><span class="lbl">男</span></label>&nbsp;&nbsp;&nbsp;
+            <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">女</span></label>
+            <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">保密</span></label>
+        </tr>
+    </table>
+</div>

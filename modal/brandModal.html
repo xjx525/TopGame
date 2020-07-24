@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">×</button>
+    <h3 id="myModalLabel" ng-bind="title"></h3>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered table-striped" width="800px">
+        <tr ng-show="update">
+            <td>品牌ID</td>
+            <td><input class="form-control" placeholder="品牌名称" ng-model="currentBrand.id" readonly></td>
+        </tr>
+        <tr>
+            <td>品牌名称</td>
+            <td><input class="form-control" placeholder="品牌名称" ng-model="currentBrand.name"></td>
+        </tr>
+        <tr>
+            <td>首字母</td>
+            <td><input class="form-control" placeholder="首字母" ng-model="currentBrand.firstChar"></td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="save()">保存</button>
+    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" ng-click="close()">关闭</button>
+</div>

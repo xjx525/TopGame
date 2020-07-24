@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="assets/css/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="font/css/font-awesome.min.css" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <script src="js/angular.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src=" js/ui-bootstrap-tpls.js"></script>
+    <script src="assets/js/typeahead-bs2.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="assets/layer/layer.js" type="text/javascript" ></script>
+    <script src="assets/layer/ng-layer.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="angular/plugins/angular/pagination.js"></script>
+    <script src="assets/laydate/laydate.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="angular/plugins/angular/pagination.css">
+    <!-- 分页组件结束 -->
+    <script type="text/javascript" src="js/controller/advertManage.js"></script>
+    <title>广告管理</title>
+</head>
+<body ng-app="advertManageApp" ng-controller="advertManageCtrl">
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">广告管理</h3>
+    </div>
+    <div class="box-body">
+        <div class="table-box">
+            <div class="pull-left">
+            </div>
+            <div class="box-tools" style="float: left">
+                <div class="has-feedback">
+                    <!--					companyName: '',/*公司名*/-->
+                    <!--					developerName: '',/*商家名*/-->
+                    <!--					status: ''/*审核状态*/-->
+                    广告名称：<input type="text" ng-model="con.name" >
+                    时长区间： <input type="text" ng-model="con.totalTime" style="width: 85px">
+                    至： <input type="text" ng-model="con.totalTimeAfter" style="width: 85px">
+                    <button class="btn btn-success" ng-click="add()" style="margin-left: 32px">
+                        <i class="fa fa-add"></i>添加
+                    </button>
+                    <button class="btn btn-danger" ng-click="deleteAll()" style="margin-left: 32px">
+                        <i class="fa fa-deleteAll"></i>批量删除
+                    </button>
+                    <a href="" class="btn btn-danger" ng-click="exportExcels()" style="margin-left: 32px">
+                        <i class="fa fa-deleteAll" ></i>批量导出
+                        <a/>
+<!--                        <button class="btn btn-danger" ng-click="showImportModal()" style="margin-left: 32px">-->
+<!--                            <i class="fa fa-deleteAll"></i>导入-->
+<!--                        </button>-->
+                        <button class="btn btn-default" ng-click="search()" style="margin-left: 33px">
+                            <i class="fa fa-search"></i>查询
+                        </button>
+                    </a>
+                </div>
+                <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+                    <thead>
+                    <tr>
+                        <th style="padding-right:0px">
+                            <input id="selall" type="checkbox" class="icheckbox_square-blue" ng-model="selectedAll" ng-change="chooseAll()">
+                        </th>
+                        <th class="sorting">广告名称</th>
+                        <th class="sorting">广告价格</th>
+                        <th class="sorting">广告时长</th>
+                        <th class="sorting">广告链接地址</th>
+                        <th class="sorting">广告上架时间</th>
+                        <th class="sorting">广告审核时间</th>
+                        <th class="sorting">图片绝对路径</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="advertManage in advertManages">
+                        <td><input type="checkbox" ng-model="advertManage.selected" ng-change="choose(advertManage)"></td>
+                        <td ng-bind="advertManage.name"></td>
+                        <td ng-bind="advertManage.price"></td>
+                        <td ng-bind="advertManage.time"></td>
+                        <td ng-bind="advertManage.url"></td>
+                        <td ng-bind="advertManage.shelfTime"></td>
+                        <td ng-bind="advertManage.auditTime"></td>
+                        <!--						<td><img src="{{advertManage.pic}}" width="100" height="50"></td>-->
+                        <!--						src="http://192.168.9.123:8860/v1/uploadDownload/downloadImage?imageName=123.JPG-->{{advertManage.pic}}
+                        <td><img src="http://localhost:8080/admin/downloadImage?imageName={{advertManage.pic}}" width="100" height="50"></td>
+                        <td class="text-center">
+
+                            <button type="button" class="btn bg-olive btn-xs" ng-click="showInfo(advertManage)">详情</button>
+                            <a title="编辑" ng-click="update(advertManage)"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
+                            <a title="删除" ng-click="delete(advertManage)" class="btn btn-xs btn-warning" ><i class="icon-trash  bigger-120"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- 数据表格 /-->
+                <!-- 分页 -->
+                <tm-pagination conf="pageInfo" style="float:right"></tm-pagination>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

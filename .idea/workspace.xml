@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fad68b21-3462-4663-a197-d4aa3e2d79b3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/TopGame" />
+  </component>
+  <component name="ProjectId" id="1bLCS3y3lxOhtOzN8Zu0iwQ2HDg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cd\WebstormProjects\TopGame02" />
+      <recent name="C:\Users\cd\WebstormProjects\TopGame02\modal" />
+      <recent name="C:\Users\cd\WebstormProjects\TopGame02\js\controller" />
+      <recent name="C:\Users\cd\WebstormProjects\TopGame02\assets\layer" />
+      <recent name="C:\Users\cd\WebstormProjects\TopGame02\assets\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cd\WebstormProjects\TopGame02\css" />
+      <recent name="C:\Users\cd\WebstormProjects\TopGame02\images" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fad68b21-3462-4663-a197-d4aa3e2d79b3" name="Default Changelist" comment="" />
+      <created>1588401982917</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588401982917</updated>
+      <workItem from="1588401984541" duration="1500000" />
+      <workItem from="1588548796584" duration="595000" />
+      <workItem from="1588645683555" duration="2524000" />
+      <workItem from="1588725141872" duration="22236000" />
+      <workItem from="1588811695718" duration="33274000" />
+      <workItem from="1588858150458" duration="1252000" />
+      <workItem from="1588897483117" duration="9513000" />
+      <workItem from="1588984493383" duration="20372000" />
+      <workItem from="1589095200523" duration="9107000" />
+      <workItem from="1589156768189" duration="9032000" />
+      <workItem from="1589243345819" duration="5181000" />
+      <workItem from="1589281503079" duration="2757000" />
+      <workItem from="1589357648882" duration="4245000" />
+      <workItem from="1589416139125" duration="14824000" />
+      <workItem from="1589525114612" duration="3045000" />
+      <workItem from="1589790866614" duration="887000" />
+      <workItem from="1589870400735" duration="2450000" />
+      <workItem from="1589955064321" duration="2177000" />
+      <workItem from="1590021864654" duration="20352000" />
+      <workItem from="1590108739962" duration="2423000" />
+      <workItem from="1590458946135" duration="23184000" />
+      <workItem from="1590582925457" duration="616000" />
+      <workItem from="1590636684337" duration="12860000" />
+      <workItem from="1590713179073" duration="27104000" />
+      <workItem from="1590808439776" duration="20602000" />
+      <workItem from="1590906504425" duration="7221000" />
+      <workItem from="1590981436008" duration="17938000" />
+      <workItem from="1591059017408" duration="1424000" />
+      <workItem from="1591060682102" duration="1891000" />
+      <workItem from="1591062894774" duration="1796000" />
+      <workItem from="1591064724385" duration="1795000" />
+      <workItem from="1591066565034" duration="1375000" />
+      <workItem from="1591069792313" duration="1000" />
+      <workItem from="1591070741381" duration="1621000" />
+      <workItem from="1591072489452" duration="786000" />
+      <workItem from="1591076839602" duration="7145000" />
+      <workItem from="1591143404824" duration="38045000" />
+      <workItem from="1591240092232" duration="31904000" />
+      <workItem from="1591319944822" duration="37436000" />
+      <workItem from="1591399972826" duration="24455000" />
+      <workItem from="1591489661898" duration="3091000" />
+      <workItem from="1591795425034" duration="612000" />
+      <workItem from="1593650602660" duration="815000" />
+      <workItem from="1594177026683" duration="18000" />
+      <workItem from="1594275103494" duration="42000" />
+      <workItem from="1594973534429" duration="1249000" />
+      <workItem from="1595207343457" duration="1919000" />
+      <workItem from="1595407899847" duration="1443000" />
+      <workItem from="1595580690449" duration="630000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="42" key="#Inspections" timestamp="1588857963002">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="233" y="42" key="#Inspections/0.0.1280.760@0.0.1280.760" timestamp="1588857963002" />
+    <state x="371" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591368798230">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="371" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.760@0.0.1280.760" timestamp="1591368798230" />
+    <state x="421" y="138" key="FileChooserDialogImpl" timestamp="1593650630016">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="421" y="138" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1593650630016" />
+    <state x="144" y="25" key="SettingsEditor" timestamp="1588987710538">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="144" y="25" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1588987710538" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1588841698726">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1280.760@0.0.1280.760" timestamp="1588841698726" />
+    <state x="303" y="82" width="672" height="678" key="search.everywhere.popup" timestamp="1590024807650">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="303" y="82" width="672" height="678" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1590024807650" />
+  </component>
+</project>

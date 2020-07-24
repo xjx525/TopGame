@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="assets/css/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="font/css/font-awesome.min.css" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <script src="js/angular.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src=" js/ui-bootstrap-tpls.js"></script>
+    <script src="assets/js/typeahead-bs2.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="assets/layer/layer.js" type="text/javascript" ></script>
+    <script src="assets/layer/ng-layer.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="angular/plugins/angular/pagination.js"></script>
+    <script src="assets/laydate/laydate.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="angular/plugins/angular/pagination.css">
+    <script type="text/javascript" src="js/controller/gameConfig.js"></script>
+    <title>用户列表</title>
+</head>
+<body>
+<div class="page-content clearfix" ng-app="gameConfigApp" ng-controller="gameConfigCtrl">
+    <div id="Member_Ratings">
+        <div class="d_Confirm_Order_style">
+            <div class="search_style">
+                <div class="title_names">搜索查询</div>
+                <ul class="search_content clearfix">
+                    <li><label class="l_f">游戏配置</label><input name="" type="text"  class="text_add"  ng-model="con.name" placeholder="输入游戏配置信息"  style=" width:400px"/></li>
+                    <li><label class="l_f">添加时间</label><input class="inline laydate-icon" id="start" style=" margin-left:10px;" ng-model="con.time"></li>
+                    <li style="width:90px;"><button type="button" class="btn_search" ng-click="search()"><i class="icon-search"></i>查询</button></li>
+                </ul>
+            </div>
+            <!---->
+            <div class="border clearfix">
+       <span class="l_f">
+        <a href="javascript:void(0)" id="member_add" class="btn btn-warning" ng-click="showDetails(userinfo)"><i class="icon-plus"></i>添加用户</a>
+        <a href="javascript:void(0)" class="btn btn-danger" ng-click="deleteAll()"><i class="icon-trash"></i>批量删除</a>
+       </span>
+            </div>
+            <!---->
+            <div class="table_menu_list">
+                <table class="table table-striped table-bordered table-hover" id="sample-table">
+                    <thead>
+                    <tr>
+                        <th style="padding-right:0px">
+                            <input id="selall" type="checkbox" class="icheckbox_square-blue" ng-model="selectedAll" ng-change="chooseAll()">
+                        </th>
+                        <th width="100">游戏id</th>
+                        <th width="130">游戏名</th>
+                        <th width="150">图片名</th>
+                        <th width="220">游戏图片</th>
+                        <th width="120">游戏配置</th>
+                        <th width="220">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="good in Goods">
+                        <td><input type="checkbox" ng-model="good.selected" ng-change="choose(good)"></td>
+                        <td ng-bind="good.id"></td>
+                        <td ng-bind="good.name"></td>
+                        <td ng-bind="good.imageName"></td>
+                        <td><img src="http://localhost:8080/admin/downloadImage?imageName={{good.pic}}" width="100" height="70"></td>
+                        <td ng-bind="good.gameConfigName"></td>
+                        <td class="text-center">
+                            <a title="编辑" ng-click="updateGameConfigInfo(good)"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
+                            <a title="删除" href="javascript:;" ng-click="delete(good.id)" class="btn btn-xs btn-warning" ><i class="icon-trash  bigger-120"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <tm-pagination conf="pageInfo" style="float:right"></tm-pagination>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

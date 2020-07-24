@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title" ng-if="developer.companyName!=null&&developer.companyName!=''">修改公司商家信息</h4>
+    <h4 class="modal-title" ng-if="developer.companyName==null||developer.companyName==''">修改个人商家信息</h4>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped"  width="800px">
+        <tr>
+            <td>联系人姓名</td>
+            <td><input  class="form-control" placeholder="联系人姓名" ng-model="developer.name" disabled></td>
+        </tr>
+        <tr>
+            <td>联系电话</td>
+            <td><input  class="form-control" placeholder="手机" ng-model="developer.phoneNumber"></td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input  class="form-control" placeholder="邮箱" ng-model="developer.mail"></td>
+        </tr>
+        <tr>
+            <td>法人身份证号</td>
+            <td><input  class="form-control" placeholder="法人身份证号" ng-model="developer.identityNumber" disabled></td>
+        </tr>
+        <tr>
+            <td>开户银行</td>
+            <td><input  class="form-control" placeholder="开户银行" ng-model="developer.bankName" disabled></td>
+        </tr>
+        <tr>
+            <td>卡号</td>
+            <td><input  class="form-control" placeholder="卡号" ng-model="developer.account" disabled></td>
+        </tr>
+        <tr ng-if="developer.companyName!=null&&developer.companyName!=''">
+            <td>公司名称</td>
+            <td><input  class="form-control" placeholder="公司名称" ng-model="developer.companyName"></td>
+        </tr>
+        <tr>
+            <td>地址</td>
+            <td><input  class="form-control" placeholder="地址" ng-model="developer.address"></td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="close()">取消</button>
+    <button type="button" class="btn btn-success" ng-click="save(developer)">保存</button>
+</div>

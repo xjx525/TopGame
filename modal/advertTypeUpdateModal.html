@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">×</button>
+    <h3 id="myModalLabel">广告类型修改</h3>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped" width="800px">
+        <tr>
+            <td>广告类型</td>
+            <td><input class="form-control" placeholder="修改广告类型" ng-model="advertType.name"></td>
+        </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="save(advertType)">保存</button>
+    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" ng-click="close()">关闭</button>
+</div>

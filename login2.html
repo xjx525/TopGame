@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" type="text/javascript" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style1.css">
+    <script src="angular/plugins/angular/angular.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/controller/login.js"></script>
+
+    <title>Login</title>
+</head>
+<body ng-app="loginApp" ng-controller="loginCtrl">
+    <img src="assets/images/bg.png" alt="" class="wave">
+    <div class="container">
+        <div class="img">
+            <img src="assets/images/img-3.svg" alt="">
+        </div>
+        <div class="login-box">
+            <form action="">
+                <img src="assets/images/avatar.svg" alt="" class="avatar">
+                <h2>Welcome</h2>
+                <div class="input-group">
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div>
+                        <h5>Username</h5>
+                        <input type="text" class="input" ng-model="admin.username">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="icon" >
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Password</h5>
+                        <input type="password" class="input" ng-model="admin.password">
+                    </div>
+                </div>
+                <a href="forgetPwd.html">Forgot Password?</a>
+<!--                <input id="loginButton" type="button" ng-click="login()" class="login" value="登录">&ndash;&gt;-->
+                <input type="button" class="btn" value="Login" ng-click="login()">
+            </form>
+        </div>
+    </div>
+    <a href="https://www.baidu.com" target="_blank" class="copyright">&copy;xjx</a>
+    <script src="assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>

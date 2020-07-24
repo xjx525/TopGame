@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">修改用户信息</h4>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped"  width="800px">
+        <tr>
+            <td>用户名</td>
+            <td><input  class="form-control" placeholder="用户名" ng-model="userinfo.username" disabled></td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input  class="form-control" placeholder="邮箱" ng-model="userinfo.email"></td>
+        </tr>
+        <tr>
+            <td>手机</td>
+            <td><input  class="form-control" placeholder="请输入手机号" ng-model="userinfo.phone"></td>
+        </tr>
+        <tr>
+            <td>昵称</td>
+            <td><input  class="form-control" placeholder="请输入昵称" ng-model="userinfo.nickname"></td>
+        </tr>
+        <tr>
+            <td>生日</td>
+            <td><input  class="form-control" placeholder="请输入生日" ng-model="userinfo.birthday"></td>
+        </tr>
+        <tr>
+            <td>地址</td>
+            <td><input  class="form-control" placeholder="请输入地址" ng-model="userinfo.address"></td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="close()">取消</button>
+    <button type="button" class="btn btn-success" ng-click="save(userinfo)">保存</button>
+</div>

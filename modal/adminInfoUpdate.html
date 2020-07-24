@@ -1,0 +1,28 @@
+<!--修改密码样式-->
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">×</button>
+    <h3 id="myModalLabel" ng-bind="title"></h3>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped"  width="800px">
+
+        <tr>
+            <td>原密码</td>
+            <td><input type="password" class="form-control" placeholder="原密码" ng-model="con.password"></td>
+        </tr>
+        <tr>
+            <td>新密码</td>
+            <td><input type="password" class="form-control" placeholder="新密码" ng-model="con.newPassword"></td>
+        </tr>
+        <tr>
+            <td>确认密码</td>
+            <td><input  class="form-control" placeholder="确认密码" ng-model="con.confirmPwd"></td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="save()">确定</button>
+    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">关闭</button>
+</div>
+

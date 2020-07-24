@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">×</button>
+    <h3 id="myModalLabel">游戏配置修改</h3>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped" width="800px">
+        <tr>
+            <td>游戏名称</td>
+            <td><input class="form-control" placeholder="修改游戏名称" ng-model="good.name"></td>
+        </tr>
+        <tr>
+            <td>游戏配置信息</td>
+            <td><input class="form-control" placeholder="修改游戏配置信息" ng-model="good.gameConfigName"></td>
+        </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="save(advertType)">保存</button>
+    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" ng-click="close()">关闭</button>
+</div>

@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">导入广告信息</h4>
+</div>
+<div class="modal-body">
+    <!--文件域是比较特殊的表单元素，不支持数据的双向绑定，因此需要自己重新设计-->
+    <browse-file file="uploadFile" label="文件上传"></browse-file>
+    <span ng-bind="fileTip"></span>
+    <!--文件域是比较特殊的表单元素，不支持数据的双向绑定，因此需要自己重新设计-->
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+    <button type="button" class="btn btn-success" ng-click="upload()">上传</button>
+</div>

@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">修改个人信息</h4>
+</div>
+<div class="modal-body">
+
+    <table class="table table-bordered table-striped"  width="800px">
+        <tr>
+            <td>用户名</td>
+            <td><input  class="form-control" placeholder="用户名" ng-model="adminInfo.username" disabled></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td><input  class="form-control" placeholder="姓名" ng-model="adminInfo.name"></td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input  class="form-control" placeholder="邮箱" ng-model="adminInfo.email"></td>
+        </tr>
+        <tr>
+            <td>手机</td>
+            <td><input  class="form-control" placeholder="请输入手机号" ng-model="adminInfo.phone"></td>
+        </tr>
+        <tr>
+            <td>qq</td>
+            <td><input  class="form-control" placeholder="qq" ng-model="adminInfo.qq"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>
+                <input  class="form-control" placeholder="性别" ng-model="adminInfo.sex">
+            </td>
+        </tr>
+        <tr>
+            <td>年龄</td>
+            <td><input  class="form-control" placeholder="请输入年龄" ng-model="adminInfo.age"></td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+    <button type="button" class="btn btn-success" ng-click="save(adminInfo)">保存</button>
+</div>

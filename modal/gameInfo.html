@@ -1,0 +1,101 @@
+<!-- 商家详情 -->
+<div class="modal-header" xmlns:javaSrcipt="http://www.w3.org/1999/xhtml">
+    <button type="button" class="close" ng-click="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">游戏详情</h4>
+</div>
+<div class="modal-body">
+
+            <ul class="nav nav-tabs">
+                    <li class="active"><a href="javascript:void(0)" ng-click="develope=1" data-toggle="tab">基本信息</a></li>
+                    <li ><a href="javascript:void(0)"  ng-click="develope=2" data-toggle="tab">游戏图片信息</a></li>
+                    <li><a href="javascript:void(0)"  ng-click="develope=3" data-toggle="tab">游戏配置信息</a></li>
+                    <li><a href="javascript:void(0)"  ng-click="develope=4" data-toggle="tab">游戏类型信息</a></li>
+                </ul>
+                <!-- 选项卡开始 -->
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="home">
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope!=2&&develope!=3&&develope!=4" width="800px">
+                            <tr>
+                                <td>游戏名称</td>
+                                <td ng-bind="good.name"></td>
+                            </tr>
+                            <tr>
+                                <td>游戏状态</td>
+                                <td ng-bind="good.status"></td>
+                            </tr>
+                            <tr>
+                                <td>游戏价格</td>
+                                <td ng-bind="good.price"></td>
+                            </tr>
+                            <tr>
+                                <td>游戏上架时间</td>
+                                <td ng-bind=" good.shelfTime"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane active in" id="linkman">
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==2">
+                            <tr>
+                                <td>游戏图片编号</td>
+                                <td ng-bind=" good.imageId"></td>
+                            </tr>
+                            <tr>
+                                <td>游戏图片名称</td>
+                                <td ng-bind=" good.imageName"></td>
+                            </tr>
+                            <td>游戏图片</td>
+                            <td>
+                                <img src="http://localhost:8080/admin/downloadImage?imageName={{good.pic}}" width="200" height="100">
+                            </td>
+                        </table>
+                    </div>
+                    <div class="tab-pane active in" id="certificate">
+                        <div >
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==3">
+                            <tr>
+                                <td>游戏配置编号</td>
+                                <td ng-bind="good.gameConfigId"></td>
+                            </tr>
+                            <tr>
+                                <td>游戏配置</td>
+                                <td ng-bind="good.gameConfigName"></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane active in" id="ceo">
+<!--                                                <div style="margin-top: -80px">-->
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==4" >
+                            <tr>
+                                <td>游戏一级分类</td>
+                                <td ng-bind="good.gameTypeOneName"></td>
+                            </tr>
+                            <tr>
+                                <td>游戏二级分类</td>
+                                <td ng-bind="good.gameTypeTwoName"></td>
+                            </tr>
+                            <tr>
+                                <td>游戏三级分类</td>
+                                <td ng-bind="good.gameTypeThreeName"></td>
+                            </tr>
+                        </table>
+                                                </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" ng-click="audit(1)" aria-hidden="true">审核通过</button>
+                <button class="btn btn-danger"  data-dismiss="modal"  ng-click="audit(2)" aria-hidden="true">审核未通过</button>
+                <button class="btn btn-danger" data-dismiss="modal" ng-click="audit(3)"  aria-hidden="true">关闭商家</button>
+                <button class="btn btn-default"  ng-click="close()">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

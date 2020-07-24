@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="assets/css/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="font/css/font-awesome.min.css" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css"/>
+        <link href="assets/css/codemirror.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/ace.min.css" />
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <script src="assets/js/jquery.min.js"></script>
+    <![endif]-->
+    <script src="js/angular.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src=" js/ui-bootstrap-tpls.js"></script>
+    <script src="assets/js/typeahead-bs2.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="assets/layer/layer.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="js/H-ui.js"></script>
+    <script type="text/javascript" src="js/H-ui.admin.js"></script>
+
+    <script type="text/javascript" src="angular/plugins/angular/pagination.js"></script>
+    <script src="assets/laydate/laydate.js" type="text/javascript"></script>
+    <script src="assets/layer/ng-layer.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="angular/plugins/angular/pagination.css">
+    <script type="text/javascript" src="js/controller/userList.js"></script>
+<title>用户列表</title>
+</head>
+<body>
+<div class="page-content clearfix" ng-app="userlistApp" ng-controller="userlistCtrl">
+    <div id="Member_Ratings">
+      <div class="d_Confirm_Order_style">
+    <div class="search_style">
+      <div class="title_names">搜索查询</div>
+      <ul class="search_content clearfix">
+       <li><label class="l_f">玩家名称</label><input name="" type="text"  class="text_add"  ng-model="con.name" placeholder="输入玩家名称、电话、邮箱"  style=" width:400px"/></li>
+       <li style="width:90px;"><button type="button" class="btn_search" ng-click="search()"><i class="icon-search"></i>查询</button></li>
+      </ul>
+    </div>
+     <!---->
+     <div class="border clearfix">
+     </div>
+     <!---->
+     <div class="table_menu_list">
+       <table class="table table-striped table-bordered table-hover" id="sample-table">
+		<thead>
+        <tr>
+            <th style="padding-right:0px">
+                <input id="selall" type="checkbox" class="icheckbox_square-blue" ng-model="selectedAll" ng-change="chooseAll()">
+            </th>
+            <th width="150">ID</th>
+            <th width="200">用户名</th>
+            <th width="80">性别</th>
+            <th width="200">手机</th>
+            <th width="180">邮箱</th>
+            <th width="200">地址</th>
+            <th width="220">加入时间</th>
+            <th width="100">状态</th>
+            <th width="220">操作</th>
+        </tr>
+		</thead>
+       <tbody>
+       <tr ng-repeat="userinfo in userinfos">
+           <td><input type="checkbox" ng-model="userinfo.selected" ng-change="choose(userinfo)"></td>
+           <td ng-bind="userinfo.id"></td>
+           <td><u style="cursor:pointer;color: #5bacb6" ng-bind="userinfo.username" ng-click="show(userinfo)" ></u></td>
+           <td ng-if="userinfo.gender==0">男</td>
+           <td ng-if="userinfo.gender==1">女</td>
+           <td ng-if="userinfo.gender==-1">其他</td>
+           <td ng-bind="userinfo.phone"></td>
+           <td ng-bind="userinfo.email"></td>
+           <td ng-bind="userinfo.address"></td>
+           <td ng-bind="userinfo.ctime"></td>
+           <td ng-if="userinfo.status==0" class="td-status"><span class="label label-success radius">已启用</span></td>
+           <td ng-if="userinfo.status==1">未验证</td>
+           <td ng-if="userinfo.status==2" class="td-status"><span class="label label-defaunt radius">已禁用</span></td>
+               <td class="text-center">
+                   <a ng-click="showStatus(userinfo)"   title="启用"  class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></a>
+                   <a ng-click="showStatus1(userinfo)"   title="停用"  class="btn btn-xs btn-warning"><i class="icon-remove bigger-120"></i></a>
+               </td>
+           </tr>
+           </tbody>
+       </table>
+         <tm-pagination conf="pageInfo" style="float:right"></tm-pagination>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+</body>
+<script>
+
+   /*用户-查看*/
+   function member_show(title,url,id,w,h,userinfo){
+       layer_show(title,url+'#?='+id,w,h,userinfo);
+   }
+
+
+   // laydate({
+   //     elem: '#start',
+   //     event: 'focus'
+   // });
+
+</script>
+</html>

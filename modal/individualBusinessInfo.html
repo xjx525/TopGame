@@ -1,0 +1,125 @@
+<!-- 商家详情 -->
+<div class="modal-header" xmlns:javaSrcipt="http://www.w3.org/1999/xhtml">
+    <button type="button" class="close" ng-click="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">个人商家详情</h4>
+</div>
+<div class="modal-body">
+            <ul class="nav nav-tabs">
+                    <li class="active"><a href="javascript:void(0)" ng-click="develope=1" data-toggle="tab">基本信息</a></li>
+                    <li ><a href="javascript:void(0)"  ng-click="develope=2" data-toggle="tab">联系人</a></li>
+                    <li><a href="javascript:void(0)"  ng-click="develope=3" data-toggle="tab">证件</a></li>
+                    <li><a href="javascript:void(0)"  ng-click="develope=4" data-toggle="tab">法定代表人</a></li>
+                    <li><a href="javascript:void(0)"  ng-click="develope=5" data-toggle="tab">开户行</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="home">
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope!=2&&develope!=3&&develope!=4&&develope!=5" width="800px">
+                            <tr>
+                                <td>商户名</td>
+                                <td ng-bind="developer.name"></td>
+                            </tr>
+                            <tr>
+                                <td>手机</td>
+                                <td ng-bind="developer.phoneNumber"></td>
+                            </tr>
+                            <tr>
+                                <td>电话</td>
+                                <td>010-20112222</td>
+                            </tr>
+                            <tr>
+                                <td>个人详细地址</td>
+                                <td ng-bind=" developer.address"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane active in" id="linkman">
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==2">
+                            <tr>
+                                <td>联系人姓名</td>
+                                <td ng-bind=" developer.name"></td>
+                            </tr>
+                            <tr>
+                                <td>联系人QQ</td>
+                                <td>78223322</td>
+                            </tr>
+                            <tr>
+                                <td>联系人手机</td>
+                                <td ng-bind="developer.phoneNumber"></td>
+                            </tr>
+                            <tr>
+                                <td>联系人E-Mail</td>
+                                <td ng-bind="developer.mail"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-pane active in" id="certificate">
+                        <div >
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==3">
+                            <tr>
+                                <td>营业执照号</td>
+                                <td>330106000109206</td>
+                            </tr>
+                            <tr>
+                                <td>税务登记证号</td>
+                                <td>0292039393011</td>
+                            </tr>
+                            <tr>
+                                <td>组织机构代码证号</td>
+                                <td>22320320302421</td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane active in" id="ceo">
+<!--                                                <div style="margin-top: -80px">-->
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==4" >
+                            <tr>
+                                <td>法定代表人</td>
+                                <td ng-bind="developer.name"></td>
+                            </tr>
+                            <tr>
+                                <td>法定代表人身份证号</td>
+                                <td ng-bind="developer.identityNumber"></td>
+                            </tr>
+                        </table>
+                                                </div>
+                    </div>
+                    <div class="tab-pane active in" id="bank" >
+<!--                        <div style="margin-top: -80px">-->
+                        <br>
+                        <table class="table table-bordered table-striped" ng-if="develope==5" >
+                            <tr>
+                                <td>开户行名称</td>
+                                <td ng-bind="developer.bankName"></td>
+                            </tr>
+                            <tr>
+                                <td>开户行支行</td>
+                                <td>海淀支行</td>
+                            </tr>
+                            <tr>
+                                <td>银行账号</td>
+                                <td ng-bind="developer.account"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+                <!-- 选项卡结束 -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" ng-click="audit(1)" aria-hidden="true">审核通过</button>
+                <button class="btn btn-danger"  data-dismiss="modal"  ng-click="audit(2)" aria-hidden="true">审核未通过</button>
+                <button class="btn btn-danger" data-dismiss="modal" ng-click="audit(3)"  aria-hidden="true">关闭商家</button>
+                <button class="btn btn-default"  ng-click="close()">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
